@@ -218,21 +218,6 @@ void newcard()
 	newcardnum=cardnagg[newcardtype]-cardn[newcardtype]+tp2;
 }
 
-//const int cardp[8]= {6997,2143,428,100,146,141,35,11}; // Validation, result=497.4 as https://www.reddit.com/r/hearthstone/comments/1wn50k/til_for_a_full_collection_you_need_to_open_497/
-//const int cardp[8]= {6992,2133,425,108,150,147,33,12};
-
-	/*		avg packs opened	cards got	avg cards drawn for each card
-	CLSC	485.3				457			1.062
-	GVG		302.7				226			1.339
-	TGT
-	*/
-	
-	/*		avg packs opened	cards got	avg cards drawn for each card
-	CLSC	2668.4				914			2.922	
-	GVG		1543.8				452			3.415
-	TGT
-	*/
-
 //462, https://www.reddit.com/r/hearthstone/comments/2mkgu4/a_program_that_calculates_how_many_packs_are/
 //497, https://www.reddit.com/r/hearthstone/comments/1wn50k/til_for_a_full_collection_you_need_to_open_497/
 //447, https://www.reddit.com/r/hearthstone/comments/2jejd5/the_amount_of_packs_needed_for_a_complete/
