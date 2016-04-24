@@ -1,0 +1,13 @@
+//C_0(amount of common card with 0 copy) C_1 C_2 R_0 R_1 R_2 E_0 E_1 E_2 L_0 L_1 L_2(always 0) GC_0 GC_1 GC_2 GR_0 GR_1 GR_2 GE_0 GE_1 GE_2 GL_0 GL_1 GL_2(always 0)
+94 0 0 81 0 0 37 0 0 33 0 0 94 0 0 81 0 0 37 0 0 33 0 0 //Classic rarity distribution 94,81,37,33,94,81,37,33
+40 0 0 37 0 0 26 0 0 20 0 0 40 0 0 37 0 0 26 0 0 20 0 0 //GVG 40,37,26,20,40,37,26,20
+49 0 0 36 0 0 27 0 0 20 0 0 49 0 0 36 0 0 27 0 0 20 0 0 //TGT 49,36,27,20,49,36,27,20
+49 0 0 36 0 0 27 0 0 20 0 0 50 0 0 36 0 0 27 0 0 21 0 0 //WOG 49,36,27,20,50,36,27,21, note that non-golden C'Thun and Beckoner of Evil are free
+0 //current dusts
+
+//backup
+94 0 0 81 0 0 37 0 0 33 0 0 94 0 0 81 0 0 37 0 0 33 0 0 //Classic rarity distribution 94,81,37,33,94,81,37,33
+40 0 0 37 0 0 26 0 0 20 0 0 40 0 0 37 0 0 26 0 0 20 0 0 //GVG 40,37,26,20,40,37,26,20
+49 0 0 36 0 0 27 0 0 20 0 0 49 0 0 36 0 0 27 0 0 20 0 0 //TGT 49,36,27,20,49,36,27,20
+49 0 0 36 0 0 27 0 0 20 0 0 50 0 0 36 0 0 27 0 0 21 0 0 //WOG 49,36,27,20,50,36,27,21, note that non-golden C'Thun and Beckoner of Evil are free
+0 //current dusts
