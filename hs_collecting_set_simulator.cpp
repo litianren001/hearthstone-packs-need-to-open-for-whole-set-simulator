@@ -35,8 +35,8 @@ long long s;
 string strtmp;
 
 
-void CollectionPregressReset(); //reset collection progress to empty
-void CollectionPregressLoad(); //load collection progress from hs_collecting_set_simulator.txt
+void CollectionProgressReset(); //reset collection progress to empty
+void CollectionProgressLoad(); //load collection progress from hs_collecting_set_simulator.txt
 void Init();
 int Sim(); //return card amount drawn for full non-golden collection
 int SimGolden(); //for golden collection
@@ -54,17 +54,17 @@ ifstream fin;
 int main()
 {
 	cout<<"Hearthstone Collecting Set Simulator by litianren001@github\n";
-	CollectionPregressReset();
+	CollectionProgressReset();
 	while (true)
 	{
 		cout<<"input number 11-43 to simulate based on different sets and strategies\ntens place: 1:classic 2: GVG 3:TGT 4:WOG\nones place: 1:Collect normal 2: Collect golden 3: Collect all\ninput 0 to load collection progress from hs_collecting_set_simulator.txt or -1 to reset\ninput bigger than 999 to change simulation times (default is 100000)\n";
 		cin>>option;
 		if (option==0)
 		{
-			CollectionPregressLoad();
+			CollectionProgressLoad();
 			if (flag==1)
 			{
-				CollectionPregressReset();
+				CollectionProgressReset();
 				cout<<"Collection progress is reset. Press enter to continue.\n===============\n";
 				getline(cin,strtmp);
 				getline(cin,strtmp);
@@ -74,7 +74,7 @@ int main()
 		}
 		if (option==-1)
 		{
-			CollectionPregressReset();
+			CollectionProgressReset();
 			cout<<"Collection pregress is reset.\n===============\n";
 			continue;
 		}
@@ -165,7 +165,7 @@ int main()
 	endit: return 0;
 }
 
-void CollectionPregressReset()
+void CollectionProgressReset()
 {
 	dustinit=0;
 	memset(cardcurrentarr,0,sizeof(cardcurrentarr));
@@ -175,7 +175,7 @@ void CollectionPregressReset()
 			cardcurrentarr[i][j][0]=cardnarr[i][j];
 		}
 }
-void CollectionPregressLoad()
+void CollectionProgressLoad()
 {
 	flag=0;
 	fin.open("hs_collecting_set_simulator.txt");

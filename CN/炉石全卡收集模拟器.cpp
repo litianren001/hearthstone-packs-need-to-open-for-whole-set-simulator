@@ -35,8 +35,8 @@ long long s;
 string strtmp;
 
 
-void CollectionPregressReset(); //reset collection progress to empty
-void CollectionPregressLoad(); //load collection progress from hs_card_simulator.txt
+void CollectionProgressReset(); //reset collection progress to empty
+void CollectionProgressLoad(); //load collection progress from hs_card_simulator.txt
 void Init();
 int Sim(); //return card amount drawn for full non-golden collection
 int SimGolden(); //for golden collection
@@ -54,17 +54,17 @@ ifstream fin;
 int main()
 {
 	cout<<"炉石传说全卡收集模拟器 by 节操何在@NGA\n";
-	CollectionPregressReset();
+	CollectionProgressReset();
 	while (true)
 	{
 		cout<<"输入11-43以模拟不同的卡包和策略\n十位数: 1:标准 2: 地精大战侏儒 3:冠军的试炼 4:古神的低语\n个位数: 1:收集普卡 2: 收集金卡 3: 收集全卡\n输入0以从炉石全卡收集模拟器.txt中读取收集进度，或-1以重置进度为初始值\n输入超过999的数字以改变模拟次数(默认值100000)\n";
 		cin>>option;
 		if (option==0)
 		{
-			CollectionPregressLoad();
+			CollectionProgressLoad();
 			if (flag==1)
 			{
-				CollectionPregressReset();
+				CollectionProgressReset();
 				cout<<"收集进度已重置。按回车以继续。\n===============\n";
 				getline(cin,strtmp);
 				getline(cin,strtmp);
@@ -74,7 +74,7 @@ int main()
 		}
 		if (option==-1)
 		{
-			CollectionPregressReset();
+			CollectionProgressReset();
 			cout<<"收集进度已重置。\n===============\n";
 			continue;
 		}
@@ -165,7 +165,7 @@ int main()
 	endit: return 0;
 }
 
-void CollectionPregressReset()
+void CollectionProgressReset()
 {
 	dustinit=0;
 	memset(cardcurrentarr,0,sizeof(cardcurrentarr));
@@ -175,7 +175,7 @@ void CollectionPregressReset()
 			cardcurrentarr[i][j][0]=cardnarr[i][j];
 		}
 }
-void CollectionPregressLoad()
+void CollectionProgressLoad()
 {
 	flag=0;
 	fin.open("炉石全卡收集模拟器.txt");
