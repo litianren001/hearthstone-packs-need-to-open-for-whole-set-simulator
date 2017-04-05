@@ -3,26 +3,22 @@
 #include <cstdlib>
 #include <ctime>
 #include<fstream>
-#define setn 5
+#define setn 7
 using namespace std;
 
 const int dustcr[8]= {40,100,400,1600,400,800,1600,3200}; //[isgolden(0~1)*4+rarity(0~3)], craft
 const int dustde[8]= {5,20,100,400,50,100,400,1600}; //disenchant
 const int cardmax[8]= {2,2,2,1,2,2,2,1}; //max amount of each rarity
-const int cardp[8]= {703567,216017,40850,9398,14826,12668,1933,741}; //card possibility based on 1/1000000, http://hearthstone.gamepedia.com/Pack
+const int cardp[8]= {697474,217533,41902,9213,16493,13670,2526,1189}; //card possibility based on 1/1000000, Kripparian Dec 2016 1346 packs, http://hearthstone.gamepedia.com/Pack
 const int cardnarr[setn][8]={{1,1,1,1,1,1,1,1},
 						 {94,81,37,33,94,81,37,33},
 						 {40,37,26,20,40,37,26,20},
 						 {49,36,27,20,49,36,27,20},
-						 {49,36,27,20,50,36,27,21}};//amount of cards of each rarity of each set
-const string setname[5]={"测试","标准","地精大战侏儒","冠军的试炼","古神的低语"};
+						 {49,36,27,20,50,36,27,21},
+						 {49,36,27,20,49,36,27,20},
+						 {49,36,27,23,49,36,27,23}};//amount of cards of each rarity of each set
+const string setname[setn]={"测试","标准","地精大战侏儒","冠军的试炼","古神的低语","龙争虎斗加基森","勇闯安戈洛"};
 const string rarityname[8]={"普通","稀有","史诗","传说","金色普通","金色稀有","金色史诗","金色传说"};
-
-//int cardn[8]={1,1,1,1}; //Debug
-//int cardn[8]= {94,81,37,33}; // Classic, 245 total
-//int cardn[8]={40,37,26,20}; //GVG, 123 total
-//int cardn[8]={49,36,27,20}; //TGT, 132 total
-//int cardn[8]={50,36,27,21}; //WOG, 134 total, note that non-golden C'Thun and Beckoner of Evil are free
 
 int cardcurrentarr[setn][8][3];//current amount of cards of 0-2 collections of each rarity of each set
 int cardn[8],cardcurrent[8][3];//amount of cards of each rarity, current amount of cards of 0-2 collections of each rarity
@@ -57,7 +53,7 @@ int main()
 	CollectionProgressReset();
 	while (true)
 	{
-		cout<<"输入11-43以模拟不同的卡包和策略\n十位数: 1:标准 2: 地精大战侏儒 3:冠军的试炼 4:古神的低语\n个位数: 1:收集普卡 2: 收集金卡 3: 收集全卡\n输入0以从炉石全卡收集模拟器.txt中读取收集进度，或-1以重置进度为初始值\n输入超过999的数字以改变模拟次数(默认值100000)\n";
+		cout<<"输入11-63以模拟不同的卡包和策略\n十位数: 1:标准 2: 地精大战侏儒 3:冠军的试炼 4:古神的低语 5:龙争虎斗加基森 6:勇闯安戈洛\n个位数: 1:收集普卡 2: 收集金卡 3: 收集全卡\n输入0以从炉石全卡收集模拟器.txt中读取收集进度，或-1以重置进度为初始值\n输入超过999的数字以改变模拟次数(默认值100000)\n";
 		cin>>option;
 		if (option==0)
 		{
@@ -104,12 +100,6 @@ int main()
 					s+=Sim();
 				}
 				break;
-				/*		avg packs opened
-				CLSC	491				
-				GVG		306			
-				TGT		310	
-				WOG		310		
-				*/
 			}
 			case 2:
 			{
@@ -126,12 +116,6 @@ int main()
 					s+=SimGolden();
 				}
 				break;
-				/*		avg packs opened
-				CLSC	2598			
-				GVG		1502			
-				TGT		1551			
-				WOG		1579		
-				*/				
 			}
 			case 3:
 			{
@@ -148,12 +132,6 @@ int main()
 					s+=SimAll();
 				}
 				break;
-				/*		avg packs opened
-				CLSC	2782			
-				GVG		1622			
-				TGT		1672			
-				WOG		1700		
-				*/	
 			}
 			default:
 			{
