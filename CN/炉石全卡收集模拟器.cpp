@@ -157,6 +157,13 @@ void CollectionProgressLoad()
 {
 	flag=0;
 	fin.open("炉石全卡收集模拟器.txt");
+	if (not fin)
+	{
+		flag=1;
+		cout<<"炉石全卡收集模拟器.txt无法读取\n";
+		fin.close();
+		return;
+	}
 	getline(fin,strtmp);
 	for(i=1;i<setn;i++)
 	{
@@ -172,11 +179,15 @@ void CollectionProgressLoad()
 			{
 				cout<<"错误的"<<setname[i]<<""<<rarityname[j]<<"卡数总和，应该是"<<cardnarr[i][j]<<"而不是"<<cardcurrentarr[i][j][0]<<"+"<<cardcurrentarr[i][j][1]<<"+"<<cardcurrentarr[i][j][2]<<"="<<tmp<<"。\n";
 				flag=1;
+				fin.close();
+				return;
 			}
 			if (j%4==3 && cardcurrentarr[i][j][2]!=0)
 			{
 				cout<<"错误的有两张"<<setname[i]<<""<<rarityname[j]<<"的卡数, 有两张的传奇的卡数应始终为0而不是"<<cardcurrentarr[i][j][2]<<"。\n";
 				flag=1;				
+				fin.close();
+				return;
 			}
 	 	}
 		getline(fin,strtmp);
