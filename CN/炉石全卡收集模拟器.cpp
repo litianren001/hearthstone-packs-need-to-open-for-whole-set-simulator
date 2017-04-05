@@ -9,7 +9,7 @@ using namespace std;
 const int dustcr[8]= {40,100,400,1600,400,800,1600,3200}; //[isgolden(0~1)*4+rarity(0~3)], craft
 const int dustde[8]= {5,20,100,400,50,100,400,1600}; //disenchant
 const int cardmax[8]= {2,2,2,1,2,2,2,1}; //max amount of each rarity
-const int cardp[8]= {697474,217533,41902,9213,16493,13670,2526,1189}; //card possibility based on 1/1000000, Kripparian Dec 2016 1346 packs, http://hearthstone.gamepedia.com/Pack
+const int cardp[8]= {697474,217533,41902,9213,16493,13670,2526,1189}; //card possibility based on 1/1000000, Kripparian Dec 2016 1346 packs, http://hearthstone.gamepedia.com/Card_pack_statistics
 const int cardnarr[setn][8]={{1,1,1,1,1,1,1,1},
 						 {94,81,37,33,94,81,37,33},
 						 {40,37,26,20,40,37,26,20},
